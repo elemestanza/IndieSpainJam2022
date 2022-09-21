@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    // Variables
-    public int digito;
-
     // Start is called before the first frame update
     void Start()
     {
