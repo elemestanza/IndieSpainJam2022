@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class OperatorsBehaviour : MonoBehaviour
 {
-    public float tiempoCambio = 20.0f;
+    //Variables
+    public float timeLapse = 20.0f;
     public GameObject[] operators; //0: Suma, 1: Resta, 2: Multiplicación, 3: División
 
     private int activeOperator;
     private float countdown;
+    public int ActiveOperator { get => activeOperator; set => activeOperator = value; }
 
     // Start is called before the first frame update
 
@@ -18,28 +20,25 @@ public class OperatorsBehaviour : MonoBehaviour
             o.SetActive(false);
         }
         operators[0].SetActive(true);
-        activeOperator = 0;
+        ActiveOperator = 0;
     }
     void Start() {
-        countdown = tiempoCambio;
+        countdown = timeLapse;
     }
 
     // Update is called once per frame
     void Update() {
         countdown -= Time.deltaTime;
         if(countdown <= 0.0f) {
-            cambioOperador();
+            operatorChange();
         }
     }
-    void cambioOperador() {
-        operators[activeOperator].SetActive(false);
-        int selectOperator = activeOperator;
-        while (selectOperator == activeOperator) selectOperator = Random.Range(0, 4);
-        activeOperator = selectOperator;
-        operators[activeOperator].SetActive(true);
-        countdown = tiempoCambio;
-    }
-    public int getActiveOperator() {
-        return activeOperator;
+    void operatorChange() {
+        operators[ActiveOperator].SetActive(false);
+        int selectOperator = ActiveOperator;
+        while (selectOperator == ActiveOperator) selectOperator = Random.Range(0, 4);
+        ActiveOperator = selectOperator;
+        operators[ActiveOperator].SetActive(true);
+        countdown = timeLapse;
     }
 }
