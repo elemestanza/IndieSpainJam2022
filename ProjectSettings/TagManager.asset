@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Perceiver
   - Enemy
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - 
   - Player
   - Enemy
-  - 
-  - 
+  - Cutout
+  - Avoidable
   - 
   - 
   - 
