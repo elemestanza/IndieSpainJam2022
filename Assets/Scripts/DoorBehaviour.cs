@@ -6,7 +6,6 @@ public class DoorBehaviour : MonoBehaviour
 {
     //Variables
     public int doorTarget;
-    public GameObject hologram;
 
     private GameObject player;
     private PlayerBehaviour playerBehaviour;
@@ -16,7 +15,9 @@ public class DoorBehaviour : MonoBehaviour
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         playerBehaviour = player.GetComponent<PlayerBehaviour>();
-        hologramCollider = hologram.GetComponent<Collider>();
+        hologramCollider = this.gameObject.GetComponent<Collider>();
+
+        hologramCollider.isTrigger = true;
     }
 
     // Update is called once per frame
@@ -26,8 +27,9 @@ public class DoorBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            if (playerBehaviour.PuntParcial >= doorTarget && !hologramCollider.isTrigger) {
-                hologramCollider.isTrigger = true;
+            if (playerBehaviour.PuntParcial >= doorTarget && hologramCollider.isTrigger) {
+                hologramCollider.isTrigger = false;
+                hologramCollider.enabled = false;
                 playerBehaviour.Floor += 1;
                 playerBehaviour.PuntParcial = 0;
             }

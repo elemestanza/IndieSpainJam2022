@@ -30,6 +30,7 @@ public class OperatorsBehaviour : MonoBehaviour
     void Update() {
         countdown -= Time.deltaTime;
         if(countdown <= 0.0f) {
+            Debug.Log("Cambio de operación");
             operatorChange();
         }
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     //Variables
     public GameObject[] enemyPrefabs;
@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     private GameObject player;
     private PlayerBehaviour playerBehaviour;
 
+    private GameObject gameManager;
+
     // Start is called before the first frame update
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -20,11 +22,19 @@ public class GameController : MonoBehaviour
         enemies = new List<GameObject>();
         enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
         numEnemies = enemies.Count;
+        Debug.Log("Hay " + numEnemies + " enemigos.");
+
+        GameObject gameManager = GameObject.Find("GameManager");
+        DontDestroyOnLoad(gameManager);
     }
 
     // Update is called once per frame
     void Update() {
-        if (enemies.Count < numEnemies) generateEnemy();
+        if (enemies.Count < numEnemies)
+        {
+            Debug.Log("Crear enemigo");
+            generateEnemy();
+        }
     }
 
     void generateEnemy() {
@@ -33,7 +43,8 @@ public class GameController : MonoBehaviour
         switch (playerBehaviour.Floor) {
             case 1:
                 maxEnemy = 2;
-                position = new Vector3(-4.663f, 37.417f, -220.73f);
+                //position = new Vector3(-4.663f, 37.417f, -220.73f);
+                position = new Vector3(-4.0f, 0.334f, 0.0f);
                 break;
             case 2:
                 maxEnemy = 4;
@@ -55,5 +66,14 @@ public class GameController : MonoBehaviour
         //Hay que decidir en qué puntos aparecen los enemigos
         GameObject enemyCreated = Instantiate(enemyPrefabs[nextEnemy], position, Quaternion.identity);
         enemies.Add(enemyCreated);
+        Debug.Log("Num enemigos: " + enemies.Count);
     }
+
+    public void destroyEnemy(GameObject e)
+    {
+        enemies.Remove(e);
+        Destroy(e);
+        Debug.Log("Num enemigos: " + enemies.Count);
+    }
+
 }
