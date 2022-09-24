@@ -7,6 +7,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: ffe417fe8c7c2b146beb9f8068f2756d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Portal
+    second: {fileID: 2100000, guid: e426a75cbdc90f44eb5a6d23c171d9d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: f8078b82afb964c42abd76153e8f13ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: dark
     second: {fileID: 2100000, guid: 54bede6ab8b38df4188f30d48177fde3, type: 2}
   - first:
@@ -39,6 +54,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: rock5
     second: {fileID: 2100000, guid: b2a022ad6855c034eb66ae0d26deacea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock6
+    second: {fileID: 2100000, guid: 458d9a03bc84d8845a9d5d7cb895321b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock7
+    second: {fileID: 2100000, guid: 58dce746a373fd448937638a9bfebb80, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
