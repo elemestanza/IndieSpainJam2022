@@ -7,9 +7,12 @@ public class PlayerBehaviour : MonoBehaviour
     //Variables
     public GameObject operatorsParent;
 
-    private int puntPlayer;
-    private int puntParcial;
+    public int puntPlayer;
+    public int puntParcial;
     private int floor;
+    public float timeLapse = 2.0f;
+    private float countdown;
+    public bool isAbleToOperate = true;
 
     private GameObject gM;
     private GameManager gameManager;
@@ -26,6 +29,7 @@ public class PlayerBehaviour : MonoBehaviour
         PuntParcial = 0;
         operatorsBehaviour = operatorsParent.GetComponent<OperatorsBehaviour>();
         Floor = 1;
+        countdown = timeLapse;
 
         gM = GameObject.Find("GameManager");
         gameManager = gM.GetComponent<GameManager>();
@@ -33,12 +37,21 @@ public class PlayerBehaviour : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        
+        countdown -= Time.deltaTime;
+        if (countdown <= 0.0f)
+        {
+            isAbleToOperate = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if(collision.gameObject.tag == "Enemy") {
+        if(collision.gameObject.tag == "Enemy" && isAbleToOperate) {
+            operatorsBehaviour.operatorChange();
             Debug.Log("Sa chocao");
+
+            countdown = timeLapse;
+            isAbleToOperate = false;
+
             int puntParcialBefore = PuntParcial;
             GameObject enemy = collision.gameObject;
             enemyBehaviour = enemy.GetComponent<EnemyBehaviour>();

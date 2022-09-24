@@ -28,13 +28,13 @@ public class OperatorsBehaviour : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        countdown -= Time.deltaTime;
+        /*countdown -= Time.deltaTime;
         if(countdown <= 0.0f) {
             Debug.Log("Cambio de operación");
             operatorChange();
-        }
+        }*/
     }
-    void operatorChange() {
+    public void operatorChange() {
         operators[ActiveOperator].SetActive(false);
         int selectOperator = ActiveOperator;
         while (selectOperator == ActiveOperator) selectOperator = Random.Range(0, 4);
