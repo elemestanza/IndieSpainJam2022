@@ -7,8 +7,8 @@ public class PlayerBehaviour : MonoBehaviour
     //Variables
     public GameObject operatorsParent;
 
-    private int puntPlayer;
-    private int puntParcial;
+    [SerializeField] private int puntPlayer;
+    [SerializeField] private int puntParcial;
     private int floor;
 
     private GameObject gM;
