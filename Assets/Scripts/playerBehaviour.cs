@@ -7,8 +7,8 @@ public class PlayerBehaviour : MonoBehaviour
     //Variables
     public GameObject operatorsParent;
 
-    public int puntPlayer;
-    public int puntParcial;
+    [SerializeField] private int puntPlayer;
+    [SerializeField] private int puntParcial;
     private int floor;
     public float timeLapse = 2.0f;
     private float countdown;
