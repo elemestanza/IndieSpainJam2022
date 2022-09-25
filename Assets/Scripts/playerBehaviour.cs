@@ -9,7 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public int puntPlayer;
     public int puntParcial;
-    private int floor;
+    [SerializeField] private int floor;
     public float timeLapse = 2.0f;
     private float countdown;
     public bool isAbleToOperate = true;
@@ -28,7 +28,7 @@ public class PlayerBehaviour : MonoBehaviour
         PuntPlayer = 0;
         PuntParcial = 0;
         operatorsBehaviour = operatorsParent.GetComponent<OperatorsBehaviour>();
-        Floor = 1;
+        Floor = 0;
         countdown = timeLapse;
 
         gM = GameObject.Find("GameManager");

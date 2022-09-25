@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     //Variables
     public GameObject[] enemyPrefabs;
 
-    private int numEnemies;
+    [SerializeField] private int numEnemies;
     private List<GameObject> enemies;
     private GameObject player;
     private PlayerBehaviour playerBehaviour;
@@ -30,6 +30,15 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+
+        if (playerBehaviour.Floor == 101)
+        {
+            enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+            numEnemies = enemies.Count;
+            playerBehaviour.Floor = 1;
+            Debug.Log("Hay " + numEnemies + " enemigos.");
+        }
+
         if (enemies.Count < numEnemies)
         {
             Debug.Log("Crear enemigo");
@@ -43,11 +52,11 @@ public class GameManager : MonoBehaviour
         switch (playerBehaviour.Floor) {
             case 1:
                 maxEnemy = 8;
-                position = new Vector3(-14.069f, 38.090f, -220.919f);
+                position = new Vector3(-7.03f, 27.7f, -252.41f);
                 break;
             case 2:
-                //maxEnemy = 8;
-                position = new Vector3(41.426f, 45.614f, -195.43f);
+                maxEnemy = 8;
+                position = new Vector3(13.21f, 38.090f, -220.919f);
                 break;
             case 3:
                 //maxEnemy = 6;
