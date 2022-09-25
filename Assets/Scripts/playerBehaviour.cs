@@ -76,14 +76,14 @@ public class PlayerBehaviour : MonoBehaviour
 
             int PuntPlayerAux = PuntPlayer + (PuntParcial - puntParcialBefore);
 
-            if (PuntPlayerAux > 100)
-            {
+            if (PuntPlayerAux > 100) {
                 PuntPlayer = 0;
                 PuntParcial = 0;
-            }
-            else
-            {
-                if (PuntParcial < 0) PuntParcial = 0;
+            } else {
+                if (PuntParcial < 0) {
+                    PuntParcial = 0;
+                    PuntPlayerAux = 0;
+                }
                 PuntPlayer = PuntPlayerAux;
             }
 
