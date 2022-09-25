@@ -12,7 +12,8 @@ public class PlayerBehaviour : MonoBehaviour
     private int floor;
     public float timeLapse = 2.0f;
     private float countdown;
-    public bool isAbleToOperate = true;
+    private bool isAbleToOperate = true;
+    private bool gt100 = false;
 
     private GameObject gM;
     private GameManager gameManager;
@@ -38,19 +39,27 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update() {
         countdown -= Time.deltaTime;
-        if (countdown <= 0.0f)
-        {
+        if (countdown <= 0.0f) {
             isAbleToOperate = true;
+        }
+
+        if (gt100) {
+            float countdownAux = 10.0f;
+            countdownAux -= Time.deltaTime;
+            if (PuntPlayer <= 100) {
+                countdownAux = 10.0f;
+                gt100 = false;
+            }
+            if (countdownAux <= 0.0f) {
+                PuntPlayer = 0;
+                PuntParcial = 0;
+            }
         }
     }
 
     private void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.tag == "Enemy" && isAbleToOperate) {
-            operatorsBehaviour.operatorChange();
             Debug.Log("Sa chocao");
-
-            countdown = timeLapse;
-            isAbleToOperate = false;
 
             int puntParcialBefore = PuntParcial;
             GameObject enemy = collision.gameObject;
@@ -75,10 +84,25 @@ public class PlayerBehaviour : MonoBehaviour
                     break;
                 default: break;
             }
-            if (PuntParcial < 0) PuntParcial = 0;
-            PuntPlayer += (PuntParcial - puntParcialBefore);
+
+            int PuntPlayerAux = PuntPlayer + (PuntParcial - puntParcialBefore);
+
+            if (PuntPlayerAux > 100) {
+                gt100 = true;
+            } else {
+                if (PuntParcial < 0) {
+                    PuntParcial = 0;
+                    PuntPlayerAux = 0;
+                }
+                PuntPlayer = PuntPlayerAux;
+            }
+
             gameManager.destroyEnemy(enemy);
             Debug.Log("Parcial: " + PuntParcial + ", Total: " + PuntPlayer);
+
+            operatorsBehaviour.operatorChange();
+            countdown = timeLapse;
+            isAbleToOperate = false;
         }
     }
 
