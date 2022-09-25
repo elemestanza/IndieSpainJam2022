@@ -7,6 +7,10 @@ TagManager:
   - Perceiver
   - Enemy
   - Fire
+  - SpawnerLevel2
+  - SpawnerLevel3
+  - SpawnerLevel4
+  - SpawnerLevel1
   layers:
   - Default
   - TransparentFX
@@ -23,7 +27,7 @@ TagManager:
   - Cutout
   - Avoidable
   - 
-  - 
+  - EnemyDoors
   - 
   - 
   - 

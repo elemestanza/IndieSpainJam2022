@@ -22,6 +22,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: assets
+    second: {fileID: 2100000, guid: 2fe851ff9d98e6b4d9ab98dced69c7df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: column
+    second: {fileID: 2100000, guid: 5d8f52dbe448c8d4194154aec9890b9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: dark
     second: {fileID: 2100000, guid: 54bede6ab8b38df4188f30d48177fde3, type: 2}
   - first:
@@ -29,6 +39,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: emisive1
     second: {fileID: 2100000, guid: b5fa5f771bfa6654f8b8762fecd92ee1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hologram
+    second: {fileID: 2100000, guid: 6c17713c2574bb64ba9c028e38b092d4, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

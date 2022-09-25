@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         switch (playerBehaviour.Floor) {
             case 1:
                 //maxEnemy = 2;
-                position = new Vector3(-4.663f, 37.417f, -220.73f);
+                position = new Vector3(-26.45511f, 0.8289986f, -36.93719f);
                 break;
             case 2:
                 //maxEnemy = 4;
