@@ -7,8 +7,8 @@ public class PlayerBehaviour : MonoBehaviour
     //Variables
     public GameObject operatorsParent;
 
-    [SerializeField] private int puntPlayer;
-    [SerializeField] private int puntParcial;
+    public int puntPlayer;
+    public int puntParcial;
     private int floor;
     public float timeLapse = 2.0f;
     private float countdown;
@@ -65,7 +65,8 @@ public class PlayerBehaviour : MonoBehaviour
             GameObject enemy = collision.gameObject;
             enemyBehaviour = enemy.GetComponent<EnemyBehaviour>();
             activeOperator = operatorsBehaviour.ActiveOperator;
-            switch (activeOperator) {
+            switch (activeOperator)
+            {
                 case 0:
                     Debug.Log("Sumando");
                     PuntParcial += enemyBehaviour.digito;
@@ -105,5 +106,4 @@ public class PlayerBehaviour : MonoBehaviour
             isAbleToOperate = false;
         }
     }
-
 }
