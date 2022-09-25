@@ -38,19 +38,15 @@ public class GameManager : MonoBehaviour
     }
 
     void generateEnemy() {
-        int maxEnemy = 9;
         Vector3 position = new Vector3();
         switch (playerBehaviour.Floor) {
             case 1:
-                //maxEnemy = 2;
                 position = new Vector3(-4.663f, 37.417f, -220.73f);
                 break;
             case 2:
-                //maxEnemy = 4;
                 position = new Vector3(41.426f, 45.614f, -195.43f);
                 break;
             case 3:
-                //maxEnemy = 6;
                 position = new Vector3(68.28f, 62.478f, -255.772f);
                 break;
             case 4:
@@ -60,9 +56,8 @@ public class GameManager : MonoBehaviour
                 position = new Vector3(-4.663f, 37.417f, -220.73f);
                 break;
         }
-        int nextEnemy = Random.Range(1, maxEnemy + 1) - 1;
+        int nextEnemy = Random.Range(0, 9);
         
-        //Hay que decidir en qu� puntos aparecen los enemigos
         GameObject enemyCreated = Instantiate(enemyPrefabs[nextEnemy], position, Quaternion.identity);
         enemies.Add(enemyCreated);
         Debug.Log("Num enemigos: " + enemies.Count);
