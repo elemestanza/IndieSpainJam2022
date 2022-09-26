@@ -8,18 +8,14 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hologram
-  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
-  m_ValidKeywords:
-  - _ALPHATEST_ON
-  m_InvalidKeywords:
-  - _ALPHAMODULATE_ON
-  - _EMISSION
+  m_Shader: {fileID: -6465566751694194690, guid: 4df69e83306172740982b33515c96c23, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
-  stringTagMap:
-    RenderType: TransparentCutout
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -50,6 +46,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Hologram_texture:
+        m_Texture: {fileID: 2800000, guid: 5b146967bb4566c40b7fd11b3371c405, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -104,6 +104,9 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
+    - _Flickering_max: 0.5
+    - _Flickering_speed: 10
+    - _Fliquering_min: 0.7
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
@@ -111,12 +114,14 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SampleGI: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 0.02
     - _SrcBlend: 1
     - _Stencil: 0
     - _StencilComp: 8
@@ -128,12 +133,19 @@ Material:
     - _UseUIAlphaClip: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _second: 50
     m_Colors:
     - _BaseColor: {r: 0.6079114, g: 0.33681917, b: 0.8207547, a: 1}
+    - _Base_color: {r: 1, g: 0.5801887, b: 0.5801887, a: 0}
     - _Color: {r: 0.6079114, g: 0.33681917, b: 0.8207547, a: 1}
+    - _Emision: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0.22745097, g: 0.5, b: 0, a: 1}
+    - _Flickering_range: {r: 0, g: 0, b: 0, a: 0}
+    - _Hologram_texture_tiling: {r: 1, g: 0.23, b: 0, a: 0}
+    - _Multiplyer: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Specular: {r: 0, g: 0, b: 0, a: 0}
+    - _Speed: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5717804297136426401
 MonoBehaviour:

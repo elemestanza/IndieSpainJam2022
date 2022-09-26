@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Estatua
+    second: {fileID: 2100000, guid: a90dfe9b6d2c16c43a8a04640af69040, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Portal
     second: {fileID: 2100000, guid: e426a75cbdc90f44eb5a6d23c171d9d1, type: 2}
   - first:
@@ -89,6 +94,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: torus10
     second: {fileID: 2100000, guid: df371dc8d04472d4a83c59d45c4ed85d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: torus11
+    second: {fileID: 2100000, guid: 799d0564ed9a80d4b9d7c4b82c5d1f82, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
