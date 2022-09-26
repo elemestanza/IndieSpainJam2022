@@ -2024,7 +2024,7 @@ MonoBehaviour:
     PresetVelocity: 0
     Prediction: 0
     PredictionMagnitude: 0
-    InnerRadius: 1
+    InnerRadius: -1
     OuterRadius: 100
     RadiusMapping: 2
     ForEachReceptor: 0
@@ -2156,7 +2156,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7441890448744362272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 803436379, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
   m_Name: 
@@ -2224,7 +2224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7441890448744362272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 805961412, guid: b26ce4b80a42c6441af375612ff69ca2, type: 3}
   m_Name: 
@@ -2275,7 +2275,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7441890448744362272}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
   m_Name: 
@@ -2588,7 +2588,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -2624,7 +2624,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!1 &7694567945631533042
 GameObject:
   m_ObjectHideFlags: 0

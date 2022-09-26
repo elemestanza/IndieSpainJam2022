@@ -39,6 +39,30 @@ public class GameManager : MonoBehaviour
             Debug.Log("Hay " + numEnemies + " enemigos.");
         }
 
+        if (playerBehaviour.Floor == 102)
+        {
+            enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+            numEnemies = enemies.Count;
+            playerBehaviour.Floor = 2;
+            Debug.Log("Hay " + numEnemies + " enemigos.");
+        }
+
+        if (playerBehaviour.Floor == 103)
+        {
+            enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+            numEnemies = enemies.Count;
+            playerBehaviour.Floor = 3;
+            Debug.Log("Hay " + numEnemies + " enemigos.");
+        }
+
+        if (playerBehaviour.Floor == 104)
+        {
+            enemies.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
+            numEnemies = enemies.Count;
+            playerBehaviour.Floor = 4;
+            Debug.Log("Hay " + numEnemies + " enemigos.");
+        }
+
         if (enemies.Count < numEnemies)
         {
             Debug.Log("Crear enemigo");
@@ -55,8 +79,8 @@ public class GameManager : MonoBehaviour
                 position = new Vector3(-7.03f, 27.7f, -252.41f);
                 break;
             case 2:
-                maxEnemy = 8;
-                position = new Vector3(13.21f, 38.090f, -220.919f);
+                maxEnemy = 17;
+                position = new Vector3(13.45f, 38.29f, -196.18f);
                 break;
             case 3:
                 //maxEnemy = 6;
