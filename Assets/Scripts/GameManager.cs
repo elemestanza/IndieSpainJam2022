@@ -83,11 +83,11 @@ public class GameManager : MonoBehaviour
                 position = new Vector3(13.45f, 38.29f, -196.18f);
                 break;
             case 3:
-                //maxEnemy = 6;
-                position = new Vector3(68.28f, 62.478f, -255.772f);
+                maxEnemy = 17;
+                position = new Vector3(86.01f, 52.97f, -251.43f);
                 break;
             case 4:
-                position = new Vector3(-74.57f, 100.361f, -293.81f);
+                position = new Vector3(-86.53f, 97.84f, -326.63f);
                 break;
             default:
                 position = new Vector3(-4.663f, 37.417f, -220.73f);
